@@ -1,17 +1,19 @@
 import React, { useContext } from 'react'
 import './sidebar.css'
 import { useState } from 'react'
+import { UserContext } from '../../App'
+
+
 
 export const Navigation = () => {
 
-    const [activeNavItem, setNavItem] = useState("")
-    const content = useContext(useContext)  
+    const {activeNavItem,setNavItem} = useContext(UserContext)  
 
      
     const navItems = [
         {
             id:1,
-            name:"Intro"
+            name:"Intro",
         },
         {
             id:2,
