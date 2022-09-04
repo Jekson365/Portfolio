@@ -17,6 +17,7 @@
     padding-left: 40px;
     text-transform: uppercase;
 }
+
 .c-white {
     color: white;
 }
@@ -35,7 +36,7 @@
     transition: 0.3s;
 }   
 .nav-items li a:hover {
-    color: white;
+    color: #1CD6CE;
 }
 .current {
     color: white;
