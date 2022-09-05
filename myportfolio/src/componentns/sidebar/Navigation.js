@@ -29,7 +29,7 @@ export const Navigation = () => {
         },
         {
             id: 5,
-            name: "Projects",
+            name: "Projectss",
         },
     ]
     const handleNavItem = (e) => {
