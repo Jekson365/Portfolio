@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './sidebar.css'
 import { useState } from 'react'
 import { UserContext } from '../../App'
@@ -7,36 +7,39 @@ import { UserContext } from '../../App'
 
 export const Navigation = () => {
 
-    const {activeNavItem,setNavItem} = useContext(UserContext)  
+    const { activeNavItem, setNavItem } = useContext(UserContext)
+    const [select, setSelect] = useState()
 
-     
     const navItems = [
         {
-            id:1,
-            name:"Intro",
+            id: 1,
+            name: "Intro",
         },
         {
-            id:2,
-            name:"About Me"
+            id: 2,
+            name: "About Me",
         },
         {
-            id:3,
-            name:"Skills"
+            id: 3,
+            name: "Skills",
         },
         {
-            id:4,
-            name:"Experience"
+            id: 4,
+            name: "Experience",
         },
         {
-            id:5,
-            name:"Projects"
+            id: 5,
+            name: "Projects",
         },
     ]
     const handleNavItem = (e) => {
         setNavItem(e.target.id)
+
+
     }
-    
-    
+
+
+
     return (
         <>
             <div className='nav-container'>
@@ -47,7 +50,8 @@ export const Navigation = () => {
                     {navItems.map((single) => {
                         return (
                             <>
-                                <li className='nav-item'><a href='#' onClick={handleNavItem} id={single.id}>{single.name}</a></li>
+                                <li className='nav-item'><a href='#'
+                                    onClick={handleNavItem} id={single.id}>{single.name}</a></li>
                             </>
                         )
                     })}
