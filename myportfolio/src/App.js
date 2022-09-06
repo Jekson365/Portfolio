@@ -7,18 +7,19 @@ import { Intro } from "./componentns/content/Intro";
 import Projects from "./componentns/content/Projects";
 import { Skills } from "./componentns/content/Skills";
 import { Animated } from "react-animated-css";
+import { Contact } from "./componentns/content/Contact";
 
 export const UserContext = createContext()
 
 function App() {
   const [activeNavItem, setNavItem] = useState(1)
- 
+  const [contact, setContact] = useState(false)
 
 
 
   return (
     <>
-      <UserContext.Provider value={{ activeNavItem, setNavItem }}>
+      <UserContext.Provider value={{ activeNavItem, setNavItem, contact, setContact }}>
         <div className="container">
           <div className="nav">
             <Navigation />
@@ -27,15 +28,17 @@ function App() {
             {activeNavItem == 1 ? <Intro /> :
               activeNavItem == 2 ? <About /> :
                 activeNavItem == 3 ? <Skills /> :
-                  activeNavItem == 4 ? <Exp /> :
-                    activeNavItem == 5 ? <Projects />
-                      : ""}
+                  activeNavItem == 5 ? <Projects />
+                    : ""}
           </div>
           <div className="arrow">
             <i class="bi bi-arrow-right"></i>
           </div>
         </div>
+        <Contact />
+        <div className={contact ? "overlay overlay-active" : "overlay"} onClick={()=>setContact(!contact)}></div>
       </UserContext.Provider>
+
     </>
 
   );

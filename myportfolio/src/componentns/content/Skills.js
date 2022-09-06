@@ -15,6 +15,7 @@ export const Skills = () => {
         "PHP",
         "Jquery",
         "Bootstrap",
+        "API"
       ],
       additional: [
         "Python",

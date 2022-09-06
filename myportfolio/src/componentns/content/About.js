@@ -21,6 +21,15 @@ export const About = () => {
           2021 - Now</p>
       <div className='dot'></div>
       </Animated>
+      <Animated className='row' animationInDelay="400">
+        <h2>Work Experience</h2>
+        <p>Front - end Developer</p>
+        <p>
+          I started working as a Front end Developer in January 2021. My responsibilty is to build 
+          user interfaces of different websites. tools I am using here are : HTML / CSS / Javascript / Jquery / Bootstrap 
+        </p>
+      <div className='dot'></div>
+      </Animated>
     </div>
   )
 }

@@ -8,7 +8,9 @@ import { UserContext } from '../../App'
 export const Navigation = () => {
 
     const { activeNavItem, setNavItem } = useContext(UserContext)
+    const {contact,setContact} = useContext(UserContext)
     const [select, setSelect] = useState()
+    
 
     const navItems = [
         {
@@ -24,12 +26,8 @@ export const Navigation = () => {
             name: "Skills",
         },
         {
-            id: 4,
-            name: "Experience",
-        },
-        {
             id: 5,
-            name: "Projectss",
+            name: "Projects",
         },
     ]
     const handleNavItem = (e) => {
@@ -44,7 +42,7 @@ export const Navigation = () => {
         <>
             <div className='nav-container'>
                 <div className='logo'>
-                    <h1 className='c-white name'>Jeko</h1>
+                    <h1 className='c-white name'><span style={{"color":"#1cd6cd"}}>J</span>eko</h1>
                 </div>
                 <div className='nav-items'>
                     {navItems.map((single) => {
@@ -57,7 +55,7 @@ export const Navigation = () => {
                     })}
                 </div>
                 <div className='contact'>
-                    <h5 className='c-white'>Contact me</h5>
+                    <h5 className='c-white' onClick={()=>setContact(!contact)}>Contact me</h5>
                 </div>
             </div>
         </>
